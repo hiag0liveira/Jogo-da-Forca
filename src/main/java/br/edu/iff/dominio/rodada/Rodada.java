@@ -2,7 +2,6 @@ package br.edu.iff.dominio.rodada;
 
 import br.edu.iff.dominio.ObjetoDominioImpl;
 import br.edu.iff.dominio.boneco.BonecoFactory;
-import br.edu.iff.dominio.item.Item;
 import br.edu.iff.dominio.jogador.Jogador;
 import br.edu.iff.dominio.letra.Letra;
 import br.edu.iff.dominio.palavra.Palavra;
@@ -13,7 +12,7 @@ public class Rodada extends ObjetoDominioImpl {
     private final int pontosQuandoDescobreTodasAsPalavras = 100;
     private final int pontosPorLetraEncoberta = 15;
 
-    private BonecoFactory bonecoFactory;
+    private static BonecoFactory bonecoFactory;
     private final Item[] itens;
     private Letra[] erradas;
     private final Jogador jogador;
@@ -23,8 +22,7 @@ public class Rodada extends ObjetoDominioImpl {
 
         this.itens = new Item[palavras.length];
         for (int i = 0; i < itens.length; i++) {
-            // TODO: revisar esse id
-            this.itens[i] = Item.criar(0, palavras[i]);
+            this.itens[i] = Item.criar(i, palavras[i]);
         }
 
         this.jogador = jogador;
@@ -46,4 +44,5 @@ public class Rodada extends ObjetoDominioImpl {
     }
 
     // TODO: continuar a implementação dos outros métodos
+    // TODO: Revisar métodos estáticos
 }

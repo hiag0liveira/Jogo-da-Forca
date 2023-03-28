@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Palavra extends ObjetoDominioImpl {
-    private LetraFactory letraFactory;
+    private static LetraFactory letraFactory;
     private final Tema tema;
     private final char[] letras;
 
@@ -25,6 +25,14 @@ public class Palavra extends ObjetoDominioImpl {
 
     public static Palavra reconstituir(long id, String palavra, Tema tema) {
         return new Palavra(id, palavra, tema);
+    }
+
+    public static LetraFactory getLetraFactory() {
+        return letraFactory;
+    }
+
+    public static void setLetraFactory(final LetraFactory letraFactory) {
+        Palavra.letraFactory = letraFactory;
     }
 
     public Letra[] getLetras() {

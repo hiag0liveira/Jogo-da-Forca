@@ -1,4 +1,4 @@
-package br.edu.iff.dominio.item;
+package br.edu.iff.dominio.rodada;
 
 import br.edu.iff.dominio.ObjetoDominioImpl;
 import br.edu.iff.dominio.letra.Letra;
@@ -67,32 +67,26 @@ public class Item extends ObjetoDominioImpl {
     }
 
     public int calcularPontosLetrasEncobertas(int valorPorLetraEncoberta) {
-        // TODO: revisar essa implementação
         return qtdeLetrasEncobertas() * valorPorLetraEncoberta;
     }
 
     public boolean descobriu() {
-        for (boolean descoberta : posicoesDescobertas) {
-            if (!descoberta) {
-                return false;
-            }
-        }
-
-        return true;
+        return acertou() || qtdeLetrasEncobertas() == 0;
     }
 
     public void exibir(Object contexto) {
         palavra.exibir(contexto);
     }
 
-    public void tentar(char codigo) {
+    boolean tentar(char codigo) {
         int[] posicoes = palavra.tentar(codigo);
         for (int posicao : posicoes) {
             posicoesDescobertas[posicao] = true;
         }
+        return posicoes.length > 0;
     }
 
-    public void arriscar(String palavra) {
+    void arriscar(String palavra) {
         this.palavraArriscada = palavra;
     }
 
