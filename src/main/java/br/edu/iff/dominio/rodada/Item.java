@@ -26,7 +26,7 @@ public class Item extends ObjetoDominioImpl {
         this.palavraArriscada = palavraArriscada;
     }
 
-    public static Item criar(long id, Palavra palavra) {
+    static Item criar(long id, Palavra palavra) {
         return new Item(id, palavra, new int[]{}, null);
     }
 
