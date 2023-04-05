@@ -1,8 +1,8 @@
 package br.edu.iff.dominio.rodada;
 
 import br.edu.iff.dominio.ObjetoDominioImpl;
-import br.edu.iff.dominio.letra.Letra;
-import br.edu.iff.dominio.palavra.Palavra;
+import br.edu.iff.bancodepalavras.dominio.letra.Letra;
+import br.edu.iff.bancodepalavras.dominio.palavra.Palavra;
 
 import java.util.ArrayList;
 import java.util.List;

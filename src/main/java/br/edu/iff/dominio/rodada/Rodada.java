@@ -3,9 +3,9 @@ package br.edu.iff.dominio.rodada;
 import br.edu.iff.dominio.ObjetoDominioImpl;
 import br.edu.iff.dominio.boneco.BonecoFactory;
 import br.edu.iff.dominio.jogador.Jogador;
-import br.edu.iff.dominio.letra.Letra;
-import br.edu.iff.dominio.palavra.Palavra;
-import br.edu.iff.dominio.tema.Tema;
+import br.edu.iff.bancodepalavras.dominio.letra.Letra;
+import br.edu.iff.bancodepalavras.dominio.palavra.Palavra;
+import br.edu.iff.bancodepalavras.dominio.tema.Tema;
 
 import java.util.Arrays;
 import java.util.HashSet;
