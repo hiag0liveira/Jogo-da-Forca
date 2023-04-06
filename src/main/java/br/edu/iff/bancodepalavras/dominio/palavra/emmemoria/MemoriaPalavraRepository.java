@@ -28,8 +28,8 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 
     @Override
     public long getProximoId() {
-        int contador = pool.size() + 1;
-        return contador;
+        long contadorID = pool.size() + 1;
+        return contadorID;
     }
 
     @Override
@@ -46,13 +46,13 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 
     @Override
     public List<Palavra> getPorTema(Tema tema){
-        List<Palavra> palavrasList = new ArrayList<>();
-        for(Palavra palavraTemp: pool) {
-            if(palavraTemp.getTema() == tema) {
-                palavrasList.add(palavraTemp);
+        List<Palavra> palavrasEncontradasNoTema = new ArrayList<>();
+        for(Palavra palavrasBuscadas: pool) {
+            if(palavrasBuscadas.getTema() == tema) {
+                palavrasEncontradasNoTema.add(palavrasBuscadas);
             }
         }
-        return palavrasList;
+        return palavrasEncontradasNoTema;
     }
 
     @Override
@@ -81,6 +81,12 @@ public class MemoriaPalavraRepository implements PalavraRepository {
         }
     }
 
+
+    @Override
+    public void atualizar(Palavra palavra) throws RepositoryException {
+    }
+
+
     @Override
     public void remover(Palavra palavra)throws RepositoryException{
         if(pool.contains(palavra)) {
@@ -89,12 +95,6 @@ public class MemoriaPalavraRepository implements PalavraRepository {
         else {
             throw new RepositoryException("Palavra não localizada no repositório");
         }
-    }
-
-    @Override
-    public void atualizar(Palavra palavra) throws RepositoryException {
-        this.remover(palavra);
-        this.inserir(palavra);
     }
 
 }
