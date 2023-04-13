@@ -19,16 +19,15 @@ public class MemoriaTemaRepository implements TemaRepository {
     }
 
     public static MemoriaTemaRepository getSoleInstance() {
-        if(soleInstance == null) {
-            soleInstance = new MemoriaTemaRepository();
+        if(MemoriaTemaRepository.soleInstance == null) {
+            MemoriaTemaRepository.soleInstance = new MemoriaTemaRepository();
         }
-        return soleInstance;
+        return MemoriaTemaRepository.soleInstance;
     }
 
     @Override
     public long getProximoId() {
-        long contadorID = pool.size() + 1;
-        return contadorID;
+        return pool.size() + 1;
     }
     @Override
     public Tema getPorId(Long id) {

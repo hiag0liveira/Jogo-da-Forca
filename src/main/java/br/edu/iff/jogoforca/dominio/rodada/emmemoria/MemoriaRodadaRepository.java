@@ -13,10 +13,10 @@ public class MemoriaRodadaRepository implements RodadaRepository {
     private static MemoriaRodadaRepository soleInstance = null;
     //get set
     public static MemoriaRodadaRepository getSoleInstance() {
-        if(soleInstance == null) {
-            soleInstance = new MemoriaRodadaRepository();
+        if(MemoriaRodadaRepository.soleInstance == null) {
+            MemoriaRodadaRepository.soleInstance = new MemoriaRodadaRepository();
         }
-        return soleInstance;
+        return MemoriaRodadaRepository.soleInstance;
     }
 
     private List<Rodada> pool;
@@ -27,8 +27,7 @@ public class MemoriaRodadaRepository implements RodadaRepository {
 
     @Override
     public long getProximoId() {
-        long contadorID = pool.size() + 1;
-        return contadorID;
+        return pool.size() + 1;
     }
 
     @Override

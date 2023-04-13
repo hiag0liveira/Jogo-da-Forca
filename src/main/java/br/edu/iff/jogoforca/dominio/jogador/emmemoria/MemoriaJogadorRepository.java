@@ -13,10 +13,10 @@ public class MemoriaJogadorRepository implements JogadorRepository {
     private static MemoriaJogadorRepository soleInstance = null;
 
     public static MemoriaJogadorRepository getSoleInstance() {
-        if(soleInstance == null) {
-            soleInstance = new MemoriaJogadorRepository();
+        if(MemoriaJogadorRepository.soleInstance == null) {
+            MemoriaJogadorRepository.soleInstance = new MemoriaJogadorRepository();
         }
-        return soleInstance;
+        return MemoriaJogadorRepository.soleInstance;
     }
 
     private List<Jogador> pool;
@@ -25,8 +25,7 @@ public class MemoriaJogadorRepository implements JogadorRepository {
 
     @Override
     public long getProximoId() {
-        long contadorID = pool.size() + 1;
-        return contadorID;
+        return pool.size() + 1;
     }
 
 

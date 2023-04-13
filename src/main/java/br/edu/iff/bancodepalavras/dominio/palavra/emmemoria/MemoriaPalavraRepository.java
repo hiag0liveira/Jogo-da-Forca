@@ -14,10 +14,10 @@ public class MemoriaPalavraRepository implements PalavraRepository {
     private static MemoriaPalavraRepository soleInstance = null;
 
     public static MemoriaPalavraRepository getSoleInstance() {
-        if(soleInstance == null) {
-            soleInstance = new MemoriaPalavraRepository();
+        if(MemoriaPalavraRepository.soleInstance == null) {
+            MemoriaPalavraRepository.soleInstance = new MemoriaPalavraRepository();
         }
-        return soleInstance;
+        return MemoriaPalavraRepository.soleInstance;
     }
 
     private List<Palavra> pool;
@@ -28,8 +28,7 @@ public class MemoriaPalavraRepository implements PalavraRepository {
 
     @Override
     public long getProximoId() {
-        long contadorID = pool.size() + 1;
-        return contadorID;
+        return pool.size() + 1;
     }
 
     @Override
