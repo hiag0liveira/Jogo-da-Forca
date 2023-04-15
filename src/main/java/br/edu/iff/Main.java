@@ -38,7 +38,7 @@ public class Main {
 
     
 	private static void IniciarJogo() {
-		// TODO Auto-generated method stub
+		System.out.println("Iniciar Jogo");
 		
 	}
 }
