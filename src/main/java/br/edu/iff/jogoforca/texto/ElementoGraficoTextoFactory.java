@@ -11,6 +11,7 @@ public class ElementoGraficoTextoFactory implements ElementoGraficoFactory {
 	private static ElementoGraficoTextoFactory soleInstance = null;
 	private LetraTextoFactory letraTextoFactory;
 	private BonecoTextoFactory bonecoTextoFactory;
+	
 
 	public static ElementoGraficoTextoFactory getSoleInstance() {
 		if (ElementoGraficoTextoFactory.soleInstance == null) {
@@ -19,11 +20,13 @@ public class ElementoGraficoTextoFactory implements ElementoGraficoFactory {
 		return soleInstance;
 	}
 
+	
 	private ElementoGraficoTextoFactory() {
 		bonecoTextoFactory = BonecoTextoFactory.getSoleInstance();
 		letraTextoFactory = LetraTextoFactory.getSoleInstance();
 	}
 
+	
 	@Override
 	public Boneco getBoneco() {
 		// TODO Auto-generated method stub
