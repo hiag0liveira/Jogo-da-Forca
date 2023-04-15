@@ -46,7 +46,6 @@ public class PalavraAppService {
 				palavraRepository.inserir(novaPalavra);
 				return true;
 			} catch (RepositoryException e) {
-				// TODO Auto-generated catch block
 				System.out.println(e.getMessage());
 				return false;
 			}

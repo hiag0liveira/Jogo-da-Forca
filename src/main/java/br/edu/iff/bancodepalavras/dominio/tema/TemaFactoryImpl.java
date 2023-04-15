@@ -33,13 +33,17 @@ public class TemaFactoryImpl extends EntityFactory implements TemaFactory {
 
     @Override
     public Tema getTema(String nome) {
-        Tema temaParaCriacao = Tema.criar(getProximoId(), nome);
-        try {
-            getTemaRepository().inserir(temaParaCriacao);
-        }catch (RepositoryException e) {
-            throw new RuntimeException("Ocorreu um erro erro ao tentar salvar o tema");
-        }
-        return temaParaCriacao;
+        return Tema.criar(getProximoId(), nome);
     }
+//    @Override
+//    public Tema getTema(String nome) {
+//        Tema temaParaCriacao = Tema.criar(getProximoId(), nome);
+//        try {
+//            getTemaRepository().inserir(temaParaCriacao);
+//        }catch (RepositoryException e) {
+//            throw new RuntimeException("Ocorreu um erro erro ao tentar salvar o tema");
+//        }
+//        return temaParaCriacao;
+//    }
 
 }
