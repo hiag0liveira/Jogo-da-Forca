@@ -7,10 +7,7 @@ import br.edu.iff.bancodepalavras.dominio.letra.Letra;
 import br.edu.iff.bancodepalavras.dominio.palavra.Palavra;
 import br.edu.iff.bancodepalavras.dominio.tema.Tema;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Rodada extends ObjetoDominioImpl {
     private static int maxPalavras = 3;
@@ -31,6 +28,7 @@ public class Rodada extends ObjetoDominioImpl {
             this.itens[i] = Item.criar(i, palavras[i]);
         }
 
+        this.erradas = new LinkedList<>();
         this.jogador = jogador;
     }
 
@@ -132,7 +130,7 @@ public class Rodada extends ObjetoDominioImpl {
     }
 
     public void arriscar(String[] palavras) {
-        if (!arriscou()) {
+        if (arriscou()) {
             throw new IllegalStateException("Só é permitido arriscar uma vez");
         }
 
@@ -144,6 +142,7 @@ public class Rodada extends ObjetoDominioImpl {
     public void exibirItens(Object contexto) {
         for (Item item : itens) {
             item.exibir(contexto);
+            System.out.println();
         }
     }
 
@@ -154,12 +153,14 @@ public class Rodada extends ObjetoDominioImpl {
     public void exibirPalavras(Object contexto) {
         for (Palavra palavra : getPalavras()) {
             palavra.exibir(contexto);
+            System.out.println();
         }
     }
 
     public void exibirLetrasErradas(Object contexto) {
         for (Letra letra : erradas) {
             letra.exibir(contexto);
+            System.out.print(" ");
         }
     }
 

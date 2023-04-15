@@ -67,7 +67,7 @@ public class MemoriaPalavraRepository implements PalavraRepository {
             }
         }
 
-        throw new RuntimeException("A plavra não foi encontrada, palavra: " + palavra);
+        return null;
     }
 
     @Override

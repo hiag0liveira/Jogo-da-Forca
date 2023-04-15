@@ -72,6 +72,8 @@ public class Palavra extends ObjetoDominioImpl {
             if (posicoes[i]) {
                 Letra letra = letraFactory.getLetra(letras[i]);
                 letra.exibir(contexto);
+            } else {
+                letraFactory.getLetraEncoberta().exibir(contexto);
             }
         }
     }
