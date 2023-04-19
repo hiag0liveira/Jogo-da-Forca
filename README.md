@@ -37,4 +37,4 @@ Claro, segue abaixo o README.md em HTML:
 <h2>Contribuição:</h2>
 <p>Este projeto é um ótimo ponto de partida para quem deseja aprender programação Java ou para aqueles que desejam contribuir para um projeto open-source. Se você encontrar algum problema ou tiver alguma ideia para melhorar o jogo, sinta-se à vontade para criar uma issue ou enviar um pull request.</p>
 <h2>Agradecimentos:</h2>
-<p>O autor do projeto, hiag0liveira, merece crédito por criar este jogo divertido e disponibilizá-lo para a comunidade.</p>
+<p>O autores do projeto, @hiag0liveira - Hiago de Oliveira Mendes, @LucasPetruci  - Lucas Sales Salvo Petruci e @C0lliNN - Raphael Collin, merece crédito por criar este jogo divertido e disponibilizá-lo para a comunidade.</p>
