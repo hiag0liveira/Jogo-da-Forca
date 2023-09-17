@@ -1,5 +1,3 @@
-Claro, segue abaixo o README.md em HTML:
-
 <h1>Jogo da Forca</h1>
 <p>O projeto <strong>"Jogo da Forca"</strong> é um jogo simples desenvolvido em Java que consiste em adivinhar uma palavra aleatória selecionada pelo programa. O jogador deve tentar adivinhar a palavra, letra por letra, antes que as tentativas acabem e a forca seja montada completamente. O projeto foi completamente orientado a objeto, seguindo as boas práticas de programação em Java.</p>
 <h2>Instruções de instalação:</h2>
